@@ -10,6 +10,11 @@ const navListItem = [
     href: '/company',
     subMenuItems: [
       {
+        listIcon: <BusinessIcon />,
+        listText: '회사',
+        href: '/company',
+      },
+      {
         listIcon: <AssignmentIndIcon />,
         listText: '나의 회사',
         href: '/company/my',

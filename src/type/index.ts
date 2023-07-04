@@ -16,3 +16,9 @@ export interface CompanyData {
   type3: number
   type4: number
 }
+
+export interface Company {
+  id: string
+  name: string
+  url: string
+}
