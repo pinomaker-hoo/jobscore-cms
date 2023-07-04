@@ -37,10 +37,7 @@ const LoginPage = () => {
     if (user.username === 'admin' && user.password === '1234') {
       dispatch(
         updateUser({
-          email: 'admin',
-          name: '관리자',
-          accessToken: '1234',
-          refreshToken: '1234',
+          logined: true,
         }),
       )
       navigate('/user')
