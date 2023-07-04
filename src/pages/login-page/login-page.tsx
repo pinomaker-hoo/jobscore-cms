@@ -31,10 +31,10 @@ const LoginPageView = ({ user, setUser, login, handleOnKeyPress }: Props) => {
       >
         <Grid container spacing={6}>
           <Grid item xs={12} sx={{ textAlign: 'center' }}>
-            <img src="/image/logo.png" width={400} />
+            <img src="/image/login_logo.png" width={400} />
           </Grid>
           <Grid item xs={12} sx={{ textAlign: 'center' }}>
-            <Typography variant="h5">EXOCOM 관리자 페이지</Typography>
+            <Typography variant="h5">Job Score 관리자 페이지</Typography>
           </Grid>
           <Grid item xs={12}>
             <TextField
