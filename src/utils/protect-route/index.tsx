@@ -14,5 +14,5 @@ export function ProtectRoute() {
 export function PublicRoute() {
   const logined = useSelector(getLogined)
 
-  return logined ? <Navigate to="/company/my" /> : <Outlet />
+  return logined ? <Navigate to="/company" /> : <Outlet />
 }
