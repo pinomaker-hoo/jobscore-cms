@@ -66,6 +66,7 @@ const LoginPageView = ({ user, setUser, login, handleOnKeyPress }: Props) => {
               variant="contained"
               onClick={login}
               color="error"
+              sx={{ color: 'white' }}
             >
               로그인
             </Button>
