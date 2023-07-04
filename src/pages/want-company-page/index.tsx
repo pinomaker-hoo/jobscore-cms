@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import UserPageView from './user-page'
+import WantCompanyPageView from './want-company-page'
 import { getMyCompanyList } from '../../services'
 import { CompanyData } from '@/type'
 
-const UserPage = () => {
+const WantCompanyPage = () => {
   const [data, setData] = useState<CompanyData[]>([])
   const [page, setPage] = useState(0)
 
@@ -15,7 +15,7 @@ const UserPage = () => {
       .catch((err) => console.log(err))
   }, [])
 
-  return <UserPageView page={page} setPage={setPage} data={data} />
+  return <WantCompanyPageView page={page} setPage={setPage} data={data} />
 }
 
-export default UserPage
+export default WantCompanyPage

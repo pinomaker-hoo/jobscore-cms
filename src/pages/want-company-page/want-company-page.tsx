@@ -108,7 +108,7 @@ const defaultColumns: GridColumns = [
   },
 ]
 
-const UserPageView = ({ page, setPage, data }: Props) => {
+const WantCompanyPageView = ({ page, setPage, data }: Props) => {
   const columns = [...defaultColumns]
   return (
     <Grid container spacing={3}>
@@ -152,4 +152,4 @@ const UserPageView = ({ page, setPage, data }: Props) => {
   )
 }
 
-export default UserPageView
+export default WantCompanyPageView
