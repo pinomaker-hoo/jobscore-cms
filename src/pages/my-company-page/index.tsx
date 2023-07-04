@@ -1,21 +1,21 @@
 import { useEffect, useState } from 'react'
-import WantCompanyPageView from './want-company-page'
-import { getWantCompanyList } from '../../services'
+import MyCompanyPageView from './my-company-page'
+import { getMyCompanyList } from '../../services'
 import { CompanyData } from '@/type'
 
-const WantCompanyPage = () => {
+const MyCompanyPage = () => {
   const [data, setData] = useState<CompanyData[]>([])
   const [page, setPage] = useState(0)
 
   useEffect(() => {
-    getWantCompanyList()
+    getMyCompanyList()
       .then((res) => {
         setData(res)
       })
       .catch((err) => console.log(err))
   }, [])
 
-  return <WantCompanyPageView page={page} setPage={setPage} data={data} />
+  return <MyCompanyPageView page={page} setPage={setPage} data={data} />
 }
 
-export default WantCompanyPage
+export default MyCompanyPage
