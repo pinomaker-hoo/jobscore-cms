@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 // ** Component Imports
 import LoginPage from './pages/login-page'
 import { ProtectRoute, PublicRoute } from 'utils/protect-route'
+import UserPage from './pages/user-page'
 
 const App = () => {
   return (
@@ -12,7 +13,7 @@ const App = () => {
         <Route path="/" element={<LoginPage />} />
       </Route>
       <Route element={<ProtectRoute />}>
-        <Route path="/user" element={<h1>User Page</h1>} />
+        <Route path="/user" element={<UserPage />} />
       </Route>
     </Routes>
   )
