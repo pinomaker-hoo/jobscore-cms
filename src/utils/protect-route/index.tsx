@@ -1,23 +1,18 @@
-// ** React Imports
-import { useMemo } from 'react'
-
 // ** Router Imports
 import { Navigate, Outlet } from 'react-router-dom'
 
 // ** Redux Imports
 import { useSelector } from 'react-redux'
-import { getAccessToken } from '../../store/app/auth'
+import { getLogined } from '../../store/app/auth'
 
 export function ProtectRoute() {
-  const token = useSelector(getAccessToken)
-  const isAuthorization = useMemo(() => (token === '' ? true : false), [])
+  const logined = useSelector(getLogined)
 
-  return isAuthorization ? <Navigate to="/" /> : <Outlet />
+  return logined ? <Outlet /> : <Navigate to="/" />
 }
 
 export function PublicRoute() {
-  const token = useSelector(getAccessToken)
-  const isAuthorization = useMemo(() => (token === '' ? true : false), [])
+  const logined = useSelector(getLogined)
 
-  return isAuthorization ? <Outlet /> : <Navigate to="/user" />
+  return logined ? <Navigate to="/user" /> : <Outlet />
 }

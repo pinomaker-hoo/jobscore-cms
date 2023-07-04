@@ -1,12 +1,16 @@
 // ** Redux Imports
+import { RootState } from '@/store'
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
+interface InitialStateProps {
   user: {
-    email: '',
-    name: '',
-    accessToken: '',
-    refreshToken: '',
+    logined: boolean
+  }
+}
+
+const initialState: InitialStateProps = {
+  user: {
+    logined: false,
   },
 }
 
@@ -20,7 +24,7 @@ export const authSlice = createSlice({
       }
     },
     logout: (state) => {
-      state.user = initialState
+      state.user = initialState.user
     },
   },
   extraReducers: (builder) => {},
@@ -29,4 +33,4 @@ export const authSlice = createSlice({
 export default authSlice.reducer
 
 export const { updateUser, logout } = authSlice.actions
-export const getAccessToken = (state) => state.auth.user.accessToken
+export const getLogined = (state: RootState) => state.auth.user.logined
