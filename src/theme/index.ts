@@ -6,7 +6,11 @@ const theme = createTheme({
     background: {
       default: '#FFFAFA',
     },
+    error: {
+      main: '#629DD7',
+    },
   },
+
   typography: {
     button: {
       fontWeight: 600,
