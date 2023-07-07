@@ -1,4 +1,4 @@
-import { CompanyData } from '@/type'
+import { CompanyData, User } from '@/type'
 import { db } from '../../config/firebaseConfig'
 import { collection, getDocs, query } from 'firebase/firestore'
 
@@ -63,6 +63,34 @@ const userApi = {
       }
     })
   },
+  getUserList: async (): Promise<User[]> => {
+    const querySnapshot = await getDocs(query(collection(db, 'user')))
+
+    return querySnapshot.docs.map((item) => {
+      const {
+        company,
+        companyId,
+        createdAt,
+        department,
+        myCode,
+        wantCode,
+        myTotalCount,
+        wantTotalCount,
+      } = item.data()
+
+      return {
+        id: item.id,
+        company,
+        companyId,
+        department,
+        myCode,
+        wantCode,
+        myTotalCount,
+        wantTotalCount,
+        createdAt,
+      }
+    })
+  },
 }
 
-export const { getMyCompanyList, getWantCompanyList } = userApi
+export const { getMyCompanyList, getWantCompanyList, getUserList } = userApi

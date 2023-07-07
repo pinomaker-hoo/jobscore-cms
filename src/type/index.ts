@@ -22,3 +22,15 @@ export interface Company {
   name: string
   url: string
 }
+
+export interface User {
+  id: string
+  companyId: string
+  company: string
+  createdAt: string
+  department: string
+  myCode: string
+  wantCode: string
+  myTotalCount: number
+  wantTotalCount: number
+}

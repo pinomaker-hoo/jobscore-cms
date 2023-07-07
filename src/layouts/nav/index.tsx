@@ -2,6 +2,7 @@
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts'
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd'
 import BusinessIcon from '@mui/icons-material/Business'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 
 const navListItem = [
   {
@@ -9,6 +10,11 @@ const navListItem = [
     listText: '사용자 조회',
     href: '/company',
     subMenuItems: [
+      {
+        listIcon: <AccountCircleIcon />,
+        listText: '사용자',
+        href: '/company/user',
+      },
       {
         listIcon: <BusinessIcon />,
         listText: '회사',
