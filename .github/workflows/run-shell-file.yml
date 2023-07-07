@@ -31,7 +31,7 @@ jobs:
       - name: Initialize Known Hosts
         run: |
           mkdir -p ~/.ssh
-          touch ~/.ssh/known_hosts
+          touch ~/.ssh/known_hosts 
           ssh-keyscan ${{ secrets.EC2_HOST_DEV }} >> ~/.ssh/known_hosts
 
       - name: Set Permissions for Private Key
@@ -39,11 +39,11 @@ jobs:
           echo "${{ secrets.DEPLOY_SSH_KEY }}" > $HOME/key.pem
           chmod 400 $HOME/key.pem
 
-      - name: Docker Container Stop 
-          env:
-            SSH_PEM_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
-          run: |
-            ssh -i $HOME/key.pem -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_HOST_DEV }} "docker stop jobscore-cms || true"
+      - name: Docker Container Stop
+        env:
+          SSH_PEM_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+        run: |
+          ssh -i $HOME/key.pem -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_HOST_DEV }} "docker stop jobscore-cms || true"
 
       - name: Docker Container Remove
         env:
