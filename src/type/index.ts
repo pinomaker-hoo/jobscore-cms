@@ -21,6 +21,7 @@ export interface Company {
   id: string
   name: string
   url: string
+  createdAt: string
 }
 
 export interface User {

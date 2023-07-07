@@ -7,12 +7,13 @@ const companyApi = {
     const querySnapshot = await getDocs(query(collection(db, 'company')))
 
     return querySnapshot.docs.map((item) => {
-      const { name, url } = item.data()
+      const { name, url, createdAt } = item.data()
 
       return {
         id: item.id,
         name,
         url,
+        createdAt,
       }
     })
   },
