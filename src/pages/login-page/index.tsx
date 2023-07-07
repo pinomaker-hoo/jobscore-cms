@@ -40,7 +40,7 @@ const LoginPage = () => {
           logined: true,
         }),
       )
-      navigate('/company')
+      navigate('/company/user')
     }
   }
 
