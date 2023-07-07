@@ -15,6 +15,7 @@ export interface CompanyData {
   type2: number
   type3: number
   type4: number
+  createdAt: string
 }
 
 export interface Company {

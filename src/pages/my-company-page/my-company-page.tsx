@@ -106,6 +106,20 @@ const defaultColumns: GridColumns = [
       </Box>
     ),
   },
+  {
+    flex: 0.3,
+    field: 'createdAt',
+    minWidth: 30,
+    headerAlign: 'center',
+    headerName: '생성 시간',
+    renderCell: ({ row }: { row: CompanyData }) => (
+      <Box sx={{ width: '100%', textAlign: 'center' }}>
+        <Typography variant="body2">
+          {row.createdAt ? row.createdAt : '-'}
+        </Typography>
+      </Box>
+    ),
+  },
 ]
 
 const MyCompanyPageView = ({ page, setPage, data }: Props) => {

@@ -18,6 +18,7 @@ const userApi = {
         type2,
         type3,
         type4,
+        createdAt,
       } = item.data()
 
       return {
@@ -30,6 +31,7 @@ const userApi = {
         type2,
         type3,
         type4,
+        createdAt,
       }
     })
   },
@@ -48,6 +50,7 @@ const userApi = {
         type2,
         type3,
         type4,
+        createdAt,
       } = item.data()
 
       return {
@@ -60,6 +63,7 @@ const userApi = {
         type2,
         type3,
         type4,
+        createdAt,
       }
     })
   },
