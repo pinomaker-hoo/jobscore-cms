@@ -13,51 +13,19 @@ interface Props {
 }
 
 const BarChart = ({ day, dates }: Props) => {
-  console.log(day)
   const categories = useMemo(() => {
     const dateArray = []
     let currentDate = dates.startDate
-    switch (day) {
-      case 1:
-        while (
-          currentDate.isBefore(dates.endDate) ||
-          currentDate.isSame(dates.endDate)
-        ) {
-          dateArray.push(currentDate.format('YYYY.MM.DD'))
-          currentDate = currentDate.add(1, 'day')
-        }
-        return dateArray
-      case 7:
-        while (
-          currentDate.isBefore(dates.endDate) ||
-          currentDate.isSame(dates.endDate)
-        ) {
-          dateArray.push(currentDate.format('YYYY.MM.DD'))
-          currentDate = currentDate.add(1, 'week')
-        }
-        return dateArray
-      case 30:
-        while (
-          currentDate.isBefore(dates.endDate.startOf('month')) ||
-          currentDate.isSame(dates.endDate.startOf('month'))
-        ) {
-          dateArray.push(currentDate.format('YYYY.MM.DD'))
-          currentDate = currentDate.add(1, 'month')
-        }
-        return dateArray
-      case 90:
-        while (
-          currentDate.isBefore(dates.endDate.startOf('month')) ||
-          currentDate.isSame(dates.endDate.startOf('month'))
-        ) {
-          dateArray.push(currentDate.format('YYYY.MM.DD'))
-          currentDate = currentDate.add(3, 'month')
-        }
-        return dateArray
-      default:
-        return []
+
+    while (
+      currentDate.isBefore(dates.endDate.startOf('month')) ||
+      currentDate.isSame(dates.endDate.startOf('month'))
+    ) {
+      dateArray.push(currentDate.format('YYYY.MM.DD'))
+      currentDate = currentDate.add(1, 'month')
     }
-  }, [dates, day])
+    return dateArray
+  }, [])
 
   useEffect(() => {
     const options = {

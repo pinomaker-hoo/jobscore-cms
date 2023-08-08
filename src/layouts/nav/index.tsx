@@ -7,6 +7,19 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 const navListItem = [
   {
     listIcon: <ManageAccountsIcon />,
+    listText: '대시보드',
+    href: '/dashboard',
+    subMenuItems: [
+      {
+        listIcon: <AccountCircleIcon />,
+        listText: '대시보드',
+        href: '/dashboard',
+      },
+    ],
+    isSubMenuOpen: false,
+  },
+  {
+    listIcon: <ManageAccountsIcon />,
     listText: '사용자 조회',
     href: '/company',
     subMenuItems: [
